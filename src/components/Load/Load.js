@@ -18,22 +18,17 @@ export const Loadin = styled.section`
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
-    padding-bottom: 120px;
-    margin-top: 50%;
+    padding-bottom: 50%;
+    margin-top: 20%;
 `
 export const Loaded = styled.img`
-    object-fit: cover;
-    width: 320px;
-    margin-left: 10%;   
-    margin-top: 10%;
-    height: 10vh;
 `
 export const Aviso = styled.span`
     font-family: 'Righteous';
     font-style: normal;
     font-weight: 400;
     font-size: 34px;
-    line-height: 40px;
+    line-height: 10px;
     display: flex;
     align-items: center;
     text-align: center;

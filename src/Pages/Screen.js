@@ -5,9 +5,7 @@ import Load from "../components/Load/Load.js";
 
 export default function Screen(){
     const [filmes ,setfilmes] =useState([]);
-
     useEffect(() => {
-
 		const requisicao = axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies");
 		requisicao.then(resposta => {
 			setfilmes(resposta.data);

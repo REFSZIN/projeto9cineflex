@@ -5,8 +5,6 @@ import Load from "../../Load/Load.js";
 
 export default function Hour(props){
     const { days } = props;
-
-
     if(!days){
         return (<Load />);
     }

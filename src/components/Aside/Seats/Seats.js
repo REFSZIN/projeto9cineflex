@@ -2,13 +2,9 @@ import "./style.js"
 import seatImg from "../../../assets/images/seats.png"
 import Load from "../../Load/Load.js";
 import { Link } from "react-router-dom"
-import { useState } from "react";
-import { ListSeats, H5, H2, BtnAside, SeatBtn, SeatBtnDispo, SeatBtnIndispo, SeatBtnSelect, ListTypeSeats, Input, Figure, FigCaption, Setimg, Seeat ,Seeats, CenterBtn, Article } from "./style.js"
+import { Title ,FigCaptionn, ListSeats, H5, H2, BtnAside, SeatBtn, SeatBtnDispo, SeatBtnIndispo, SeatBtnSelect, ListTypeSeats, Input, Figure, FigCaption, Setimg, Seeat ,Seeats, CenterBtn, Article } from "./style.js"
 export default function Seats(props){
-    const { seats } = props;
-    const [cpf,setCpf] = useState('');
-    const [client,setClient] = useState('');
-
+    const { assetos, client , cpf , seats, setAssentos, setClient , setCpf} = props 
     if(!seats){
         return (<Load />);
     }
@@ -18,9 +14,9 @@ export default function Seats(props){
             <ListSeats>
             {seats.map((data, index) =>{
                 return(
-                <Setimg key={index}>
+                <Setimg  key={index}>
                     <Seeat src={seatImg} alt="Seat"/>
-                    <SeatBtn>{data.name}</SeatBtn>
+                    <SeatBtn onClick={ () => setAssentos([assetos, data.name])} >{data.name}</SeatBtn>
                 </Setimg>);
             })}
             </ListSeats> 
@@ -47,6 +43,8 @@ export default function Seats(props){
                     <Link to='/pedido'><BtnAside type="submit" >Reservar assento(s)</BtnAside></Link>
                 </CenterBtn>
             </Article>
+            <Title>Sinopse</Title>
+            <FigCaptionn>{props.overview}</FigCaptionn>
         </Seeats>
     )
 }

@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { Tumb } from "../../Main/style.js";
 export default function Success(props){
-    const {title, hour, day, seat1, seat2, client ,cpf, thumb} = props 
+
+    const {title, hour, day, assetos, client ,cpf, thumb} = props 
     return(
         <Succeess>
             <H6>Pedido feito com sucesso!</H6>
@@ -15,7 +16,7 @@ export default function Success(props){
                 </article>
                 <article>
                     <H4>Ingressos</H4>
-                    <Span>{seat1}<br/>{seat2}</Span>
+                    <Span>{assetos}</Span>
                 </article>
                 <article>
                     <H4>Comprador</H4>

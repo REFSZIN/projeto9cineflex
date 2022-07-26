@@ -21,7 +21,18 @@ export const H5 = styled.label`
     align-items: center;
     color: #293845;
 `;
-
+export const Title = styled.h5`
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: #293845;
+    margin-top: 20px;
+    margin-bottom: 10px;
+`;
 export const BtnAside = styled.button`
     width: 225px;
     height: 42px;
@@ -162,6 +173,20 @@ export const FigCaption = styled.figcaption`
     margin-left: 10px;
 `;
 
+export const FigCaptionn = styled.figcaption`
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    max-width: 50%;
+    min-width: 40%;
+    font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+`;
 export const SeatBtnSelect = styled.button`
     height: 20px;
     width: 20px;

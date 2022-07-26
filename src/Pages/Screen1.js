@@ -1,16 +1,12 @@
 import Hour from "../components/Aside/Hour/Hour";
 import Footer from "../components/Footer/Footer";
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function Screen1(){
+export default function Screen1(props){
     const { id } = useParams();
-
-    const [days, setDays] = useState();
-    const [thumb, setThumb] = useState();
-    const [title, setTitle] = useState();
-
+    const { days,setDays ,thumb,setThumb ,title, setTitle } = props
     useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${id}/showtimes`);
         promise.then((resposta) => {

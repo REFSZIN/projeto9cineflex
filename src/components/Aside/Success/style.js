@@ -12,7 +12,7 @@ export const H6 = styled.h6`
     letter-spacing: 0.04em;
     color: #247A6B;
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 `;
 
 export const H4 = styled.h4`
@@ -28,7 +28,6 @@ export const H4 = styled.h4`
     margin-top: 20px;
 `;
 export const Tumb = styled.img`
-margin-top: 100px;
     width: 129px;
     height: 193px;
     box-shadow: 1px 2px 3px 2px #c9c9c9;
@@ -48,7 +47,8 @@ export const BtnSuccess = styled.button`
     letter-spacing: 0.04em;
     color: #FFFFFF;
     border: none;
-    margin-top: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 `;
 
 export const Ticket = styled.section`
