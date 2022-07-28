@@ -13,7 +13,7 @@ export default function Seats(props){
     if(cpf.length >= 11 && client.length >= 3 && assetos.length <= 2){
         preenchido = true;
     }
-    console.log(seats)
+    let cliente = client;
     return (
         <Seeats>
             <H2>Selecione o(s) assento(s)</H2>
@@ -49,7 +49,7 @@ export default function Seats(props){
                 <Input id="cpf" name="cpf" value={cpf} onChange={e => setCpf(e.target.value)} oninvalid="this.setCustomValidity('Você não tem CPF? 🤔')" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite seu CPF..." required/>
                 <CenterBtn>
                     { preenchido ? 
-                    <Link to='/pedido'><BtnAside type="submit" >Reservar assento(s)</BtnAside></Link> 
+                    <Link to={`/pedido/${cliente}`}><BtnAside type="submit" >Reservar assento(s)</BtnAside></Link> 
                     : 
                     <BtnAside type="submit" disabled>Reservar assento(s)</BtnAside>}
                 </CenterBtn>

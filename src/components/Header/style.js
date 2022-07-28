@@ -27,12 +27,27 @@ export const Logo = styled.img `
     width: 60px;
     height: 50px;
 `;
-
-export const Aa = styled.nav`
+export const BackPage = styled.img`
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transform: rotate(230deg);
+    margin-right: 10px;
+    position: absolute;
+    left: 40px;
+    &:hover{
+    cursor: pointer;
+    }
+    filter: invert(40%);
+`;
+export const Aa = styled.nav(({voltar}) =>`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: space-around;
-`;
+    @media (max-width: 614px) {
+        ${voltar ? "margin-left: 70px;" : "margin-left: 0px;"}
+    }
+`);

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { Tumb } from "../../Main/style.js";
 export default function Success(props){
-
-    const {title, hour, day, assetos, client ,cpf, thumb} = props 
+    const {reset, title, hour, day, assetos, client ,cpf, thumb} = props 
+    const reseti = reset;
     return(
         <Succeess>
             <H6>Pedido feito com sucesso!</H6>
@@ -24,7 +24,7 @@ export default function Success(props){
                 </article>
             </Ticket>
             <CenterBtn>
-                <Link to='/'> <BtnSuccess>Voltar pra Home</BtnSuccess> </Link>
+                <Link to='/' onClick={() => reseti()}> <BtnSuccess>Voltar pra Home</BtnSuccess> </Link>
             </CenterBtn>
             <Tumb src={thumb}/>
         </Succeess>
