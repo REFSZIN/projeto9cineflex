@@ -51,11 +51,11 @@ export const BtnAside = styled.button`
     margin-top: 40px;
 `;
 
-export const SeatBtn = styled.button`
+export const SeatBtn = styled.button( ({isAvailable, status}) =>`
     position: relative;
     height: 22px;
     width: 22px;
-    background: #C3CFD9;
+    background: ${ status ? "#FFFFFF" : isAvailable ? "#C3CFD9" : "#FBE192" } ;
     border: 1px solid #808F9D;
     border-radius: 100%;
     font-family: 'Roboto';
@@ -75,7 +75,7 @@ export const SeatBtn = styled.button`
     &:hover{
         cursor: pointer;
     }
-`;
+`);
 
 export const SeatBtnDispo = styled.button`
     height: 20px;
@@ -219,6 +219,14 @@ export const CenterBtn = styled.div`
     flex-wrap: wrap;
 `;
 
+export const SeatBtnComponent = styled.div`
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+`;
 export const Setimg = styled.div`
     position: relative;
     height: 22px;

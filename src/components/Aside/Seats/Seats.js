@@ -2,23 +2,31 @@ import "./style.js"
 import seatImg from "../../../assets/images/seats.png"
 import Load from "../../Load/Load.js";
 import { Link } from "react-router-dom"
-import { Title ,FigCaptionn, ListSeats, H5, H2, BtnAside, SeatBtn, SeatBtnDispo, SeatBtnIndispo, SeatBtnSelect, ListTypeSeats, Input, Figure, FigCaption, Setimg, Seeat ,Seeats, CenterBtn, Article } from "./style.js"
+import SeatBtnComponent from "./SeatBtnComponent.js"
+import { Title ,FigCaptionn, ListSeats, H5, H2, BtnAside, SeatBtnDispo, SeatBtnIndispo, SeatBtnSelect, ListTypeSeats, Input, Figure, FigCaption, Setimg, Seeat ,Seeats, CenterBtn, Article } from "./style.js"
 export default function Seats(props){
-    const { assetos, client , cpf , seats, setAssentos, setClient , setCpf} = props 
+    const {selectSeats, assetos, client , cpf , seats, setAssentos, setClient , setCpf, ids ,setIds} = props
+    let preenchido = false;
     if(!seats){
         return (<Load />);
     }
+    if(cpf.length >= 11 && client.length >= 3 && assetos.length <= 2){
+        preenchido = true;
+    }
+    console.log(seats)
     return (
         <Seeats>
             <H2>Selecione o(s) assento(s)</H2>
             <ListSeats>
             {seats.map((data, index) =>{
                 return(
-                <Setimg  key={index}>
+                <Setimg key={index}>
                     <Seeat src={seatImg} alt="Seat"/>
-                    <SeatBtn onClick={ () => setAssentos([assetos, data.name])} >{data.name}</SeatBtn>
+                    <SeatBtnComponent assetos={assetos} setAssentos={setAssentos} setIds={setIds} ids={ids} data={data} isAvailable={data.isAvailable} selectSeats={selectSeats} >
+                    </SeatBtnComponent>
                 </Setimg>);
-            })}
+                })
+            }
             </ListSeats> 
             <ListTypeSeats>
                 <Figure >
@@ -36,11 +44,14 @@ export default function Seats(props){
             </ListTypeSeats> 
             <Article>
                 <H5>Nome do comprador:</H5>
-                <Input id="user" name="user" value={client} type="text" placeholder="Digite seu nome..." oninvalid="this.setCustomValidity('Você não tem Nome? 🤔')" onChange={e => setClient(e.target.value)}required/>
+                <Input id="user" name="user" value={client} type="text" placeholder="Digite seu nome..." oninvalid="this.setCustomValidity('Você não tem Nome? 🤔')" onChange={e => setClient(e.target.value)} required/>
                 <H5>CPF do comprador:</H5>
                 <Input id="cpf" name="cpf" value={cpf} onChange={e => setCpf(e.target.value)} oninvalid="this.setCustomValidity('Você não tem CPF? 🤔')" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Digite seu CPF..." required/>
                 <CenterBtn>
-                    <Link to='/pedido'><BtnAside type="submit" >Reservar assento(s)</BtnAside></Link>
+                    { preenchido ? 
+                    <Link to='/pedido'><BtnAside type="submit" >Reservar assento(s)</BtnAside></Link> 
+                    : 
+                    <BtnAside type="submit" disabled>Reservar assento(s)</BtnAside>}
                 </CenterBtn>
             </Article>
             <Title>Sinopse</Title>

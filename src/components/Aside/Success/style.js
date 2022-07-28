@@ -32,6 +32,9 @@ export const Tumb = styled.img`
     height: 193px;
     box-shadow: 1px 2px 3px 2px #c9c9c9;
 `
+export const Ingressos = styled.article`
+    display: grid;
+`
 export const BtnSuccess = styled.button`
     width: 225px;
     height: 42px;
@@ -55,6 +58,9 @@ export const Ticket = styled.section`
     animation: flipInX 1s;
 `;
 
+export const Asseto = styled.span`
+    margin: 5px;
+`;
 export const CenterBtn = styled.div`
     display: flex;
     align-items: center;

@@ -21,7 +21,7 @@ export default function App (){
     const [cpf,setCpf] = useState('');
     const [client,setClient] = useState('');
     const [days, setDays] = useState();
-
+    const [idss, setIds] = useState();
     return (
         <>
         <BrowserRouter>
@@ -30,8 +30,8 @@ export default function App (){
             <Routes>
                 <Route path="/" element={<Screen />} />
                 <Route path="/sessoes/:id" element={<Screen1 setThumb={setThumb} setTitle={setTitle} setDays={setDays}  title={title} thumb={thumb}days={days}/>} />
-                <Route path="/assentos/:idSection" element={<Screen2 setThumb={setThumb} setOverview={setOverview} setTitle={setTitle} setHour={setHour} setDay={setDay} setSeats={setSeats} day={day} hour={hour} title={title} thumb={thumb} seats={seats} setAssentos={setAssentos} overview={overview} assetos={assetos} setCpf={setCpf} setClient={setClient} cpf={cpf} client={client}/>}/>
-                <Route path="/pedido" element={<Screen3  cpf={cpf}  thumb={thumb} client={client} day={ day } hour={hour} title={title} assetos={assetos}/>}/>
+                <Route path="/assentos/:idSection" element={<Screen2 setIds={setIds} ids={idss} setThumb={setThumb} setOverview={setOverview} setTitle={setTitle} setHour={setHour} setDay={setDay} setSeats={setSeats} day={day} hour={hour} title={title} thumb={thumb} seats={seats} setAssentos={setAssentos} overview={overview} assetos={assetos} setCpf={setCpf} setClient={setClient} cpf={cpf} client={client}/>}/>
+                <Route path="/pedido" element={<Screen3  ids={idss} cpf={cpf}  thumb={thumb} client={client} day={ day } hour={hour} title={title} assetos={assetos}/>}/>
             </Routes> 
         </BrowserRouter>
         </>

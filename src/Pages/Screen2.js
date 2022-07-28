@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function Screen2(props){
-    const { seats ,setSeats,day ,setDay ,hour , setHour ,title ,setTitle , thumb, setThumb , overview, setOverview , assetos,setAssentos ,cpf , setCpf,client ,setClient} = props;
+    const { idss,setIds, seats ,setSeats,day ,setDay ,hour , setHour ,title ,setTitle , thumb, setThumb , overview, setOverview , assetos,setAssentos ,cpf , setCpf,client ,setClient} = props;
     const { idSection } = useParams();
     useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${idSection}/seats`);
@@ -20,7 +20,7 @@ export default function Screen2(props){
     },[idSection, setSeats ,setDay , setHour , setTitle , setThumb, setOverview]);
     return(
             <>           
-                <Seats seats={seats} setAssentos={setAssentos} overview={overview} assetos={assetos} setCpf={setCpf} setClient={setClient} cpf={cpf} client={client} />
+                <Seats ids={idss} setIds={setIds} seats={seats} setAssentos={setAssentos} overview={overview} assetos={assetos} setCpf={setCpf} setClient={setClient} cpf={cpf} client={client} />
                 <FooterSeats day={day} hour={hour} title={title} thumb={thumb} />
             </>
     );

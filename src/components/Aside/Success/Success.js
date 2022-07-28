@@ -1,5 +1,5 @@
 import "./style.js"
-import {H6, H4, BtnSuccess,Ticket, CenterBtn, Succeess, Span } from "./style.js"
+import {Asseto, Ingressos, H6, H4, BtnSuccess,Ticket, CenterBtn, Succeess, Span } from "./style.js"
 import { Link } from "react-router-dom";
 import React from "react";
 import { Tumb } from "../../Main/style.js";
@@ -14,10 +14,10 @@ export default function Success(props){
                     <H4>Filme e sessão</H4>
                     <Span>{title}<br/>{day} - {hour}</Span>
                 </article>
-                <article>
+                <Ingressos>
                     <H4>Ingressos</H4>
-                    <Span>{assetos}</Span>
-                </article>
+                    {assetos.map((a, i) => <Asseto key={i}>Assentos: {a} </Asseto>)}
+                </Ingressos>
                 <article>
                     <H4>Comprador</H4>
                     <Span>Nome:{client}<br/>CPF:{cpf}</Span>
