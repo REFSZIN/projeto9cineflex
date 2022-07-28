@@ -5,14 +5,14 @@ import Load from "../components/Load/Load.js";
 
 export default function Screen(props){
     const [filmes,setfilmes] =useState([]);
-    useEffect((props) => {
-        const {setVoltar} = props
+    const {setVoltar}=props;
+    useEffect(() => {
 		const requisicao = axios.get("https://mock-api.driven.com.br/api/v7/cineflex/movies");
 		requisicao.then(resposta => {
 			setfilmes(resposta.data);
             setVoltar(false)
 		});
-	}, [setfilmes]);
+	}, [setfilmes,setVoltar]);
 if(filmes === []) {
     return(
         <Load />

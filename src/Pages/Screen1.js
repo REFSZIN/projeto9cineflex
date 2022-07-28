@@ -6,9 +6,8 @@ import axios from "axios";
 
 export default function Screen1(props){
     const { id } = useParams();
-    const {days,thumb,title} = props
-    useEffect((props) => {
-        const {setVoltar,setIdTela, setTela, setDays, setThumb, setTitle} = props
+    const {setIdTela,setVoltar,setTela ,days,setDays ,thumb,setThumb ,title, setTitle } = props
+    useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/movies/${id}/showtimes`);
         promise.then((resposta) => {
             setDays(resposta.data.days);
@@ -18,7 +17,7 @@ export default function Screen1(props){
             setTela("/")
             setIdTela(id)
         });
-    },[id]);
+    },[id,setDays, setThumb, setTitle,setVoltar,setTela,setIdTela]);
     return(
         <>
             <Hour days={days}/>
