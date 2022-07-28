@@ -5,9 +5,10 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function Screen2(props){
-    const {setIdSectionTela,idTela,setTela, idss,setIds, seats ,setSeats,day ,setDay ,hour , setHour ,title ,setTitle , thumb, setThumb , overview, setOverview , assetos,setAssentos ,cpf , setCpf,client ,setClient} = props;
+    const {idTela,idss,setIds,seats,day,hour,title,thumb,overview,assetos,setAssentos,cpf,setCpf,client,setClient} = props;
     const { idSection } = useParams();
-    useEffect(() => {
+    useEffect((props) => {
+        const {setIdSectionTela,idTela,setTela, setSeats,setDay,setHour,setTitle,setThumb,setOverview} = props;
         const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${idSection}/seats`);
         promise.then((resposta) => {
             setSeats(resposta.data.seats);
@@ -19,7 +20,7 @@ export default function Screen2(props){
             setTela(`/sessoes/${idTela}`)
             setIdSectionTela(idSection)
         });
-    },[idSection, setSeats ,idTela, setDay , setHour , setTitle , setThumb, setOverview,setTela,setIdSectionTela]);
+    },[idSection,idTela]);
     return(
             <>           
                 <Seats ids={idss} setIds={setIds} seats={seats} setAssentos={setAssentos} overview={overview} assetos={assetos} setCpf={setCpf} setClient={setClient} cpf={cpf} client={client} />
