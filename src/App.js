@@ -20,7 +20,7 @@ export default function App (){
     const [cpf,setCpf] = useState('');
     const [client,setClient] = useState('');
     const [days, setDays] = useState();
-    const [idss, setIds] = useState();
+    const [idss, setIds] = useState([]);
     const [voltar , setVoltar] = useState(false);
     const [tela, setTela] = useState("");
     const [idTela, setIdTela] = useState("");

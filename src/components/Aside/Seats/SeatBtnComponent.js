@@ -9,7 +9,7 @@ export default function SeatBtnComponent(props){
         if(data.isAvailable){
             setAssentos([...assetos, data.name])               
             data.isAvailable = false;
-            setIds([ids, data.id]);
+            setIds([...ids, data.id]);
             setStatus(true)
         }
         else{
