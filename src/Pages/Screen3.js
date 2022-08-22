@@ -20,6 +20,7 @@ export default function Screen3(props){
             console.log("Assentos Não Foram Reservados")
         });
     },[cliente, idss, client, cpf,setTela, idSectionTela]);
+    console.log(idss)
     return(
         <>
             <Success reset={reset} cpf={cpf}  thumb={thumb} client={client} day={ day } hour={hour} title={title} assetos={assetos}/> 

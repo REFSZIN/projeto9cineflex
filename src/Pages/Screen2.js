@@ -22,7 +22,7 @@ export default function Screen2(props){
     },[idSection, setSeats ,idTela, setDay , setHour , setTitle , setThumb, setOverview,setTela,setIdSectionTela]);
     return(
             <>           
-                <Seats ids={idss} setIds={setIds} seats={seats} setAssentos={setAssentos} overview={overview} assetos={assetos} setCpf={setCpf} setClient={setClient} cpf={cpf} client={client} />
+                <Seats idss={idss} setIds={setIds} seats={seats} setAssentos={setAssentos} overview={overview} assetos={assetos} setCpf={setCpf} setClient={setClient} cpf={cpf} client={client} />
                 <FooterSeats day={day} hour={hour} title={title} thumb={thumb} />
             </>
     );

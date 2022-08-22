@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import SeatBtnComponent from "./SeatBtnComponent.js"
 import { Title ,FigCaptionn, ListSeats, H5, H2, BtnAside, SeatBtnDispo, SeatBtnIndispo, SeatBtnSelect, ListTypeSeats, Input, Figure, FigCaption, Setimg, Seeat ,Seeats, CenterBtn, Article } from "./style.js"
 export default function Seats(props){
-    const {selectSeats, assetos, client , cpf , seats, setAssentos, setClient , setCpf, ids ,setIds} = props
+    const {selectSeats, assetos, client , cpf , seats, setAssentos, setClient , setCpf, idss ,setIds} = props
     let preenchido = false;
     if(!seats){
         return (<Load />);
@@ -22,7 +22,7 @@ export default function Seats(props){
                 return(
                 <Setimg key={index}>
                     <Seeat src={seatImg} alt="Seat"/>
-                    <SeatBtnComponent assetos={assetos} setAssentos={setAssentos} setIds={setIds} ids={ids} data={data} isAvailable={data.isAvailable} selectSeats={selectSeats} >
+                    <SeatBtnComponent assetos={assetos} setAssentos={setAssentos} setIds={setIds} idss={idss} data={data} isAvailable={data.isAvailable} selectSeats={selectSeats} >
                     </SeatBtnComponent>
                 </Setimg>);
                 })
